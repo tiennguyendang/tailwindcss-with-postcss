@@ -16,9 +16,8 @@
   },
   "scripts": {
     "sync": "browser-sync start --server --files \"**/*\"",
-    "compile:dev": "postcss assets/styles/main.css -o dist/main.css -w",
+    "compile:dev": "postcss tailwind.css -o assets/styles/main.css -w",
     "dev": "run-p compile:dev sync",
-    "compile:prod": "postcss assets/styles/main.css -o dist/main.min.css",
-    "start": "npm run serve"
+    "compile:prod": "NODE_ENV=production postcss tailwind.css -o assets/styles/main.css"
   }
 }
